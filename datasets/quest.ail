@@ -1,0 +1,12 @@
+askable need_internet.
+askable work.
+
+askable money_disponibility=V.
+askable nights_number=N.
+is_holiday <- ~work.
+can_work(X) <- (need_internet & amenities(X,"wifi")).
+can_work(X) <- ~need_internet.
+
+can_afford(X) <- price(X,P) & money_disponibility=D & minimum_nights(X,Min) & nights_number=N & P*N=<D.
+can_book(X) <- can_afford(X) & is_available(X) & nights_possible(X).
+nights_possible(X) <- minimum_nights(X,Min) & maximum_nights(X,Max) & nights_number=N & N>Min & N<Max.
