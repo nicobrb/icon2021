@@ -1,5 +1,7 @@
 import pandas as pd
 import pyswip as psw
+from os import path
+from sys import argv
 
 from icon2021.preprocessing.belief_network import BeliefNetwork
 
@@ -12,9 +14,13 @@ def print_help():
     print("write 'quit' to exit")
 
 
-def main(pathpl):
+def main():
+    if not path.isfile(argv[1]):
+        print("file not found or wrong directory, returning")
+        return
+
     print("loading knowledge base...")
-    pl.consult(pathpl)
+    pl.consult(argv[1])
     pd.set_option('display.max_rows', 3000, 'display.max_columns', 10)
 
     while True:
@@ -104,4 +110,6 @@ def satisfaction():
         print("Error" + str(e))
 
 
-main("../datasets/kb.pl")
+
+main()
+# main("../datasets/kb.pl")

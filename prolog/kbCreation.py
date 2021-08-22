@@ -1,5 +1,6 @@
 import pandas as pd
 from os import path, remove
+from sys import argv
 
 
 def createKB(dataframe, kbpath, max_rows=-1):
@@ -83,12 +84,12 @@ def createRules(kb_path):
     kb.close()
 
 
-def main(dataset_path):
-    if not path.isfile(dataset_path):
+def main():
+    if not path.isfile(argv[1]):
         print("File not found or not valid")
         return
 
-    dataframe = pd.read_csv(dataset_path)
+    dataframe = pd.read_csv(argv[1])
 
     if path.exists('../datasets/kb.pl'):
         remove('../datasets/kb.pl')
@@ -96,4 +97,5 @@ def main(dataset_path):
     createRules('../datasets/kb.pl')
 
 
-main("../datasets/prolog_with_clusters.csv")
+main()
+# main("../datasets/prolog_with_clusters.csv")

@@ -85,11 +85,11 @@ def reset_and_drop(dataframe):
 def main():
     print("Preprocessing starting...")
 
-    if not path.isfile(argv[0]):
+    if not path.isfile(argv[1]):
         print("file not found or wrong directory, returning")
         return
 
-    dframe = pd.read_csv(argv[0])
+    dframe = pd.read_csv(argv[1])
     pd.set_option("display.max_columns", 200)
     pd.set_option("display.max_rows", 50)
     pd.set_option('expand_frame_repr', False)
