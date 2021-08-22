@@ -7,14 +7,12 @@ della Conoscenza, anno accademico 2020/2021 (Bari)
 
 - Installare SWIProlog 
 
-
-   `` https://www.swi-prolog.org/download/stable/bin/swipl-8.2.4-1.x64.exe.envelope``
+    `` https://www.swi-prolog.org/download/stable/bin/swipl-8.2.4-1.x64.exe.envelope``
 
 
 - Clonare il progetto
 
-    
-   `` git clone https://github.com/robertogasbarro/icon2021.git``
+    `` git clone https://github.com/robertogasbarro/icon2021.git``
 
 - Creare l'ambiente virtuale 
 
