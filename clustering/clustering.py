@@ -1,8 +1,7 @@
-import pandas as pd
 from os import path
 from sys import argv
+import pandas as pd
 from sklearn_extra.cluster import KMedoids
-from sklearn.cluster import KMeans
 from matplotlib import pyplot as plt
 import seaborn as sns
 
@@ -36,9 +35,9 @@ def elbow(dframe, iteration, k):
     plt.show()
 
 
-def main(data, itero, elbow_k):
+def main():
     try:
-        if not path.isfile(data):
+        if not path.isfile(argv[0]):
             print("file not found or wrong directory, returning")
             return
 
@@ -47,16 +46,16 @@ def main(data, itero, elbow_k):
         return
 
     try:
-        if itero > 0:
-            max_iter = int(itero)
+        if int(argv[1]) > 0:
+            max_iter = int(argv[1])
         else:
             print("incorrect iterations value")
             return
     except IndexError:
         max_iter = 10
     try:
-        if elbow_k > 0:
-            k = int(elbow_k)
+        if int(argv[2]) > 0:
+            k = int(argv[2])
         else:
             print("incorrect k value for elbow plotting")
             return
@@ -64,7 +63,7 @@ def main(data, itero, elbow_k):
         k = 5
 
     pd.set_option('expand_frame_repr', False)
-    dataframe = pd.read_csv(data)
+    dataframe = pd.read_csv(argv[0])
 
     # elbow(dataframe, max_iter, k)
 
@@ -80,4 +79,5 @@ def main(data, itero, elbow_k):
     print("Preprocessing done")
 
 
-main("../datasets/preprocessed.csv", 2, 5)
+main()
+# main("../datasets/preprocessed.csv", 2, 5)

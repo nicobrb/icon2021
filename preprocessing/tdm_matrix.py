@@ -1,8 +1,8 @@
+import re
 import pandas as pd
 import numpy as np
 from collections import Counter
 from itertools import dropwhile
-import re
 
 
 def amenity_activator(row, cols, idx_amenities):
@@ -22,8 +22,6 @@ def neat_columns(text):
 
     return text
 
-
-# sono state commentate un po' di righe di printing per analizzare il comportamento di questo metodo: vanno decommentati
 
 def term_document_matrix(tdm_df, treshold):
     print("Term-Document Matrix creation starting")

@@ -1,11 +1,11 @@
-import pandas as pd
-from os import path
-import numpy as np
 from data_cleaning import cleaning
+from sys import argv
+from os import path
+import pandas as pd
+import numpy as np
 from tdm_matrix import term_document_matrix
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
-
 
 
 def discretize(dframe, describer, colonna):
@@ -72,7 +72,6 @@ def princ_component_analysis(dataframe, n_comps=30):
     pca_featurettes = pca.transform(dataframe)
     pca_dframe = pd.DataFrame(pca_featurettes)
 
-
     return pca_dframe
 
 
@@ -83,14 +82,14 @@ def reset_and_drop(dataframe):
     return dataframe
 
 
-def main(dataset_path):
+def main():
     print("Preprocessing starting...")
 
-    if not path.isfile(dataset_path):
+    if not path.isfile(argv[0]):
         print("file not found or wrong directory, returning")
         return
 
-    dframe = pd.read_csv(dataset_path)
+    dframe = pd.read_csv(argv[0])
     pd.set_option("display.max_columns", 200)
     pd.set_option("display.max_rows", 50)
     pd.set_option('expand_frame_repr', False)
@@ -142,8 +141,7 @@ def main(dataset_path):
     amenities_reducted = reset_and_drop(amenities_reducted)
     bayesian_dataframe = reset_and_drop(bayesian_dataframe)
 
-
-    # scaling dei dati attraverso il minmaxscaler: relazione a seguire
+    # scaling dei dati attraverso il minmaxscaler
     # print(outlier_values(dframe))
 
     dframe = pd.concat([dframe, amenities_for_dframe], axis=1)
@@ -163,4 +161,5 @@ def main(dataset_path):
     print("Preprocessing done")
 
 
-main("../datasets/trainingset.csv")
+main()
+# main("../datasets/trainingset.csv")
