@@ -8,32 +8,29 @@ della Conoscenza, anno accademico 2020/2021 (Bari)
 - Installare SWIProlog 
 
 
-    https://www.swi-prolog.org/download/stable/bin/swipl-8.2.4-1.x64.exe.envelope
+   `` https://www.swi-prolog.org/download/stable/bin/swipl-8.2.4-1.x64.exe.envelope``
 
 
 - Clonare il progetto
 
     
-    git clone https://github.com/robertogasbarro/icon2021.git
+   `` git clone https://github.com/robertogasbarro/icon2021.git``
 
 - Creare l'ambiente virtuale 
-    
-    
-    cd icon2021
 
-    python -m venv icon2021
+    ``cd icon2021``
+
+    ``python -m venv icon2021``
 
 - Attivare l'ambiente virtuale 
-   
-  
-    git bash su win, altrimenti linux
+
+    ``git bash su win, altrimenti linux``
     
-    source /src/icon2021/bin/activate
+    ``source /src/icon2021/bin/activate``
 
 - Installare le dipendenze
 
-    
-    pip install -r requirements.txt
+    ``pip install -r requirements.txt``
 
 <h1>Come eseguire gli script</h1>
 
