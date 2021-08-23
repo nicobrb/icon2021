@@ -60,7 +60,7 @@ def createRules(kb_path):
     kb = open(kb_path, "a")
     print('creating rules in KB')
 
-    kb.write('room_for_couples(X) :- bedrooms(X,1.0), room_type(X,"private room").\n')
+    kb.write('room_for_couples(X) :- bedrooms(X,1.0), room_type(X,"private_room").\n')
     kb.write('is_available(X) :- has_availability(X), instant_bookable(X).\n')
     kb.write('room_for_family(Room,Children) :- beds(Room,Beds), Beds is (1.0+Children).\n')
     kb.write('connections(X,Y) :- amenities(X,Y),member(Y,["wifi","cable tv"]).\n')
