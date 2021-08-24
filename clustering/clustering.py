@@ -12,9 +12,6 @@ def k_Medoids(dataframe, max_iters, n_cluster):
     cluster = KMedoids(n_clusters=n_cluster, metric='euclidean',
                        init='build', method='alternate', max_iter=max_iters).fit(dataframe)
 
-    """cluster = KMeans(n_clusters=n_cluster,init='k-means++', n_init=20,
-                     algorithm='elkan', max_iter=max_iters).fit(dataframe)"""
-
     print(cluster.inertia_,"is the cost of", n_cluster, "clusters with", max_iters, "iterations")
     return cluster
 
@@ -36,8 +33,9 @@ def elbow(dframe, iteration, k):
 
 
 def main():
+
     try:
-        if not path.isfile(argv[0]):
+        if not path.isfile(argv[1]):
             print("file not found or wrong directory, returning")
             return
 
@@ -46,24 +44,23 @@ def main():
         return
 
     try:
-        if int(argv[1]) > 0:
-            max_iter = int(argv[1])
+        if int(argv[2]) > 0:
+            max_iter = int(argv[2])
         else:
             print("incorrect iterations value")
             return
     except IndexError:
         max_iter = 10
     try:
-        if int(argv[2]) > 0:
-            k = int(argv[2])
+        if int(argv[3]) > 0:
+            k = int(argv[3])
         else:
             print("incorrect k value for elbow plotting")
             return
     except IndexError:
         k = 5
 
-    pd.set_option('expand_frame_repr', False)
-    dataframe = pd.read_csv(argv[0])
+    dataframe = pd.read_csv(argv[1])
 
     # elbow(dataframe, max_iter, k)
 
@@ -80,4 +77,4 @@ def main():
 
 
 main()
-# main("../datasets/preprocessed.csv", 2, 5)
+

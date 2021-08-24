@@ -83,6 +83,7 @@ def reset_and_drop(dataframe):
 
 
 def main():
+
     print("Preprocessing starting...")
 
     if not path.isfile(argv[1]):
@@ -93,6 +94,8 @@ def main():
 
     dframe = cleaning(dframe)
     newframe = dframe.copy()
+
+    print("Term-Document Matrix creation starting")
     amenities_reducted = term_document_matrix(dframe, np.sqrt(len(dframe)))
     amenities_for_dframe = term_document_matrix(newframe, 0)
 
@@ -142,7 +145,7 @@ def main():
     # print(outlier_values(dframe))
 
     dframe = pd.concat([dframe, amenities_for_dframe], axis=1)
-    dframe = princ_component_analysis(dframe, 26)
+    dframe = princ_component_analysis(dframe, 20)
 
     mm_scaler = MinMaxScaler()
     print("Scaling the dataset with MinMax...")
@@ -158,4 +161,4 @@ def main():
 
 
 main()
-# main("../datasets/trainingset.csv")
+

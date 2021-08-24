@@ -24,8 +24,6 @@ def neat_columns(text):
 
 
 def term_document_matrix(tdm_df, treshold):
-    print("Term-Document Matrix creation starting")
-    pd.set_option("display.max_rows", None)
 
     # togliamo le parentesi ad inizio e fine righe, cambio ogni virgola con spazio a seguire con una singola virgola
     # e modifico ogni virgola tra parentesi con un &
@@ -44,8 +42,8 @@ def term_document_matrix(tdm_df, treshold):
             del words_counter[key]
 
     bag_of_words = list(words_counter.keys())
-    # creo un dizionario che mappa ad ogni termine un indice
 
+    # creo un dizionario che mappa ad ogni termine un indice
     index_of_amenities = {}
     indx = 0
     stripped_row = []

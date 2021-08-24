@@ -44,6 +44,7 @@ def replace_nan_vals(columns, dataframe):
 
 
 def cleaning(dframe):
+
     print("dropping useless columns...")
     dframe = dframe.drop(["listing_url", "scrape_id", "last_scraped", "neighborhood_overview",
                           "picture_url", "host_id", "host_url", "host_name", "host_since", "host_location",
