@@ -90,9 +90,6 @@ def main():
         return
 
     dframe = pd.read_csv(argv[1])
-    pd.set_option("display.max_columns", 200)
-    pd.set_option("display.max_rows", 50)
-    pd.set_option('expand_frame_repr', False)
 
     dframe = cleaning(dframe)
     newframe = dframe.copy()
@@ -154,7 +151,6 @@ def main():
     print("MinMax Done")
 
     bayesian_dataframe = pd.concat([bayesian_dataframe, amenities_reducted], axis=1)
-
     dframe.to_csv('../datasets/preprocessed.csv', index=False)
     bayesian_dataframe.to_csv('../datasets/bayesian_ready.csv', index=False)
 
