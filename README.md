@@ -42,7 +42,7 @@ per l'esecuzione dei restanti script.</em>
 
 <h3>Creazione della KB</h3>
 
-    python prolog/kbCreation.py ./datasets/trainingset.csv
+    python prolog/kbCreation.py ./datasets/prolog_with_clusters.csv
 
 <h3>Query alla KB</h3>
 
