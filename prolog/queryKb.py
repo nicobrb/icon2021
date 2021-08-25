@@ -3,7 +3,7 @@ import pyswip as psw
 from os import path
 from sys import argv
 
-from belief_network.belief_network import BeliefNetwork
+
 pl = psw.Prolog()
 
 
