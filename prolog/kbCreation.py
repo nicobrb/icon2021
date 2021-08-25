@@ -91,11 +91,12 @@ def main():
 
     dataframe = pd.read_csv(argv[1])
 
-    if path.exists('../datasets/kb.pl'):
-        remove('../datasets/kb.pl')
-    createKB(dataframe, '../datasets/kb.pl')
-    createRules('../datasets/kb.pl')
+    if path.exists('./datasets/kb.pl'):
+        remove('./datasets/kb.pl')
+    createKB(dataframe, './datasets/kb.pl')
+    createRules('./datasets/kb.pl')
 
 
 main()
-# main("../datasets/prolog_with_clusters.csv")
+
+# main("./datasets/prolog_with_clusters.csv")

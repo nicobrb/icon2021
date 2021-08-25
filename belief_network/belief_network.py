@@ -1,15 +1,13 @@
 import numpy as np
 import pandas as pd
 from pgmpy.readwrite import XMLBIFReader
-from pgmpy.models import BayesianNetwork
 from pgmpy.inference import VariableElimination
-
 
 
 class BeliefNetwork:
 
-    xmlbif_path = '../datasets/bn_ratingradice.xml'
-    data_path = '../datasets/bayesian_with_clusters.csv'
+    xmlbif_path = './datasets/bn_ratingradice.xml'
+    data_path = './datasets/bayesian_with_clusters.csv'
     df = None
     model = None
     inference = None

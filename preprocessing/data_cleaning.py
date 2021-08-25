@@ -120,7 +120,7 @@ def cleaning(dframe):
     # a questo punto il file è pronto per essere elaborato dalla parte di codice gestita da prolog
 
     print("Prolog preprocessing is ready.")
-    dframe.to_csv('../datasets/prolog_ready.csv', index=False)
+    dframe.to_csv('./datasets/prolog_ready.csv', index=False)
 
     # eseguire one-hot encoding delle variabili categoriche: si prendono i dummies delle variabili categoriche,
     # segue un merge con il dataframe originario con conseguente drop delle variabili categoriche iniziali

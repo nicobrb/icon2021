@@ -67,11 +67,11 @@ def main():
     cluster = k_Medoids(dataframe, max_iter, k)
     k_medoids_cluster = cluster.labels_
 
-    bay_frame = pd.read_csv('../datasets/bayesian_ready.csv').assign(n_cluster=k_medoids_cluster)
-    prolog_frame = pd.read_csv('../datasets/prolog_ready.csv').assign(n_cluster=k_medoids_cluster)
+    bay_frame = pd.read_csv('./datasets/bayesian_ready.csv').assign(n_cluster=k_medoids_cluster)
+    prolog_frame = pd.read_csv('./datasets/prolog_ready.csv').assign(n_cluster=k_medoids_cluster)
 
-    bay_frame.to_csv('../datasets/bayesian_with_clusters.csv', index=False)
-    prolog_frame.to_csv('../datasets/prolog_with_clusters.csv', index=False)
+    bay_frame.to_csv('./datasets/bayesian_with_clusters.csv', index=False)
+    prolog_frame.to_csv('./datasets/prolog_with_clusters.csv', index=False)
 
     print("Preprocessing done")
 

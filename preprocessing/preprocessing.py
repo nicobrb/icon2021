@@ -99,7 +99,7 @@ def main():
     amenities_reducted = term_document_matrix(dframe, np.sqrt(len(dframe)))
     amenities_for_dframe = term_document_matrix(newframe, 0)
 
-    bayesian_dataframe = pd.read_csv("../datasets/prolog_ready.csv")
+    bayesian_dataframe = pd.read_csv("./datasets/prolog_ready.csv")
 
     # vanno identificati gli outliers: prima isoliamo le features numeriche da quelle categoriche + le feature senza
     # valore semantico (come 'id'). Queste ultime verranno droppate.
@@ -154,8 +154,8 @@ def main():
     print("MinMax Done")
 
     bayesian_dataframe = pd.concat([bayesian_dataframe, amenities_reducted], axis=1)
-    dframe.to_csv('../datasets/preprocessed.csv', index=False)
-    bayesian_dataframe.to_csv('../datasets/bayesian_ready.csv', index=False)
+    dframe.to_csv('./datasets/preprocessed.csv', index=False)
+    bayesian_dataframe.to_csv('./datasets/bayesian_ready.csv', index=False)
 
     print("Preprocessing done")
 

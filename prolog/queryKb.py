@@ -3,8 +3,7 @@ import pyswip as psw
 from os import path
 from sys import argv
 
-from icon2021.preprocessing.belief_network import BeliefNetwork
-
+from belief_network.belief_network import BeliefNetwork
 pl = psw.Prolog()
 
 
@@ -27,7 +26,7 @@ def main():
         print("insert query:")
         query = input()
         if query == 'ailog':
-            pl.consult("../datasets/ailog2.pl")
+            pl.consult("./datasets/ailog2.pl")
         elif query == 'assert':
             print('write assertion without final point')
             try:
@@ -62,7 +61,7 @@ def main():
                     todrop = set()
                     for index, row in df.iterrows():
                         for col in df.columns:
-                            if (isinstance(row[col], psw.Variable)):
+                            if isinstance(row[col], psw.Variable):
                                 todrop.add(index)
                                 break
                     df.drop(index=todrop, inplace=True)
@@ -108,7 +107,6 @@ def satisfaction():
 
     except Exception as e:
         print("Error" + str(e))
-
 
 
 main()
