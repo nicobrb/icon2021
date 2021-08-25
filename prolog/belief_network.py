@@ -4,7 +4,7 @@ from pgmpy.readwrite import XMLBIFReader
 from pgmpy.inference import VariableElimination
 
 
-class BeliefNetwork:
+class BeliefNet:
 
     xmlbif_path = './datasets/bn_ratingradice.xml'
     data_path = './datasets/bayesian_with_clusters.csv'

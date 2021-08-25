@@ -3,6 +3,7 @@ import pyswip as psw
 from os import path
 from sys import argv
 
+from belief_network import BeliefNet
 
 pl = psw.Prolog()
 
@@ -96,7 +97,7 @@ def satisfaction():
                 df = pd.DataFrame(list_results)
 
             ids = list(df['Room'])
-            bn = BeliefNetwork(ids, favorite_features)
+            bn = BeliefNet(ids,favorite_features) #BeliefNetwork(ids, favorite_features)
             results = bn.compute_probabilities()
             df['satisfaction_prob'] = results
             df.sort_values('satisfaction_prob', inplace=True, ascending=False)

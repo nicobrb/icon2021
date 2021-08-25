@@ -38,7 +38,7 @@ per l'esecuzione dei restanti script.</em>
 
 <h3>K-Medoids Clustering</h3>
     
-    python clustering/clustering.py ./datasets/preprocessed.csv [num_iterate] [num_folds]
+    python clustering/clustering.py ./datasets/preprocessed.csv [num_iterate] [num_clusters]
 
 <h3>Creazione della KB</h3>
 
