@@ -20,11 +20,6 @@ della Conoscenza, anno accademico 2020/2021 (Bari)
 
     ``python -m venv icon2021``
 
-- Attivare l'ambiente virtuale 
-
-    ``git bash su win, altrimenti linux``
-    
-    ``source /src/icon2021/bin/activate``
 
 - Installare le dipendenze
 
@@ -39,16 +34,16 @@ per l'esecuzione dei restanti script.</em>
 
 <h3>Dataset Preprocessing</h3>
     
-    preprocessing.py ./datasets/trainingset.csv
+    python preprocessing/preprocessing.py ./datasets/trainingset.csv
 
 <h3>K-Medoids Clustering</h3>
     
-    clustering.py ./datasets/preprocessed.csv [num_iterate] [num_folds]
+    python clustering/clustering.py ./datasets/preprocessed.csv [num_iterate] [num_folds]
 
 <h3>Creazione della KB</h3>
 
-    kbCreation.py ./datasets/trainingset.csv
+    python prolog/kbCreation.py ./datasets/trainingset.csv
 
 <h3>Query alla KB</h3>
 
-    queryKb.py ./datasets/kb.pl
+    python prolog/queryKb.py ./datasets/kb.pl
